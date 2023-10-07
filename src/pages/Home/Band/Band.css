@@ -1,0 +1,28 @@
+.band-section {
+    margin: 10em auto;
+}
+
+.band-image {
+    width: 50rem;
+    height: auto;
+}
+
+.band-title {
+    font-size: 2.8rem;
+}
+
+.band-description {
+    word-wrap: break-word;
+    font-size: 1.6rem;
+    max-width: 50rem;
+}
+
+@media only screen and (max-width: 1053px) {
+    .band-section {
+        flex-direction: column;
+    }
+
+    .band-content {
+        margin-top: 3em;
+    }
+}
