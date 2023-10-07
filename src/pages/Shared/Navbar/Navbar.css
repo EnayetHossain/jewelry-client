@@ -70,21 +70,11 @@
     font-size: 2rem;
     cursor: pointer;
     z-index: 12;
+    display: none;
 }
 
 .mobile-navigation {
-    position: absolute;
-    background-color: red;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    z-index: 10;
-    min-height: 100dvh;
-    transition: 0.5s;
-}
-
-.mobile-navigation-active {
-    transform: translate(-50%, 0%);
+    display: none;
 }
 
 .mobile-navigation a {

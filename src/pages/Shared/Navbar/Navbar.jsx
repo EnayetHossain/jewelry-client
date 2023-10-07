@@ -45,11 +45,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div
-        className={`mobile-navigation ${
-          open ? "mobile-navigation-active" : ""
-        }`}
-      >
+      <div className={`mobile-navigation`}>
         <ul className="mobile-main-menu">
           <li className="mobile-menu-item">
             <Link to={"/"}>Home</Link>
