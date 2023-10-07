@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1em;
+    position: relative;
 }
 
 .logo {
@@ -19,13 +20,15 @@
 
 .logo>a {
     font-family: 'Roboto Serif', serif;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 2vw, 2.5rem);
     font-weight: 600;
     color: rgb(var(--secondary-color));
 }
 
 .main-menu {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-menu .menu-item {
@@ -66,4 +69,33 @@
 .ham-bar {
     font-size: 2rem;
     cursor: pointer;
+    z-index: 12;
+}
+
+.mobile-navigation {
+    position: absolute;
+    background-color: red;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 10;
+    min-height: 100dvh;
+    transition: 0.5s;
+}
+
+.mobile-navigation-active {
+    transform: translate(-50%, 0%);
+}
+
+.mobile-navigation a {
+    font-size: 1.8rem;
+    margin: 5em 0;
+}
+
+@media only screen and (max-width: 1079px) {
+
+    .main-menu,
+    .logs {
+        display: none;
+    }
 }

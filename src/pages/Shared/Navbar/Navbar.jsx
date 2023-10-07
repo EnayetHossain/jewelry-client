@@ -45,6 +45,36 @@ const Navbar = () => {
         </li>
       </ul>
 
+      <div
+        className={`mobile-navigation ${
+          open ? "mobile-navigation-active" : ""
+        }`}
+      >
+        <ul className="mobile-main-menu">
+          <li className="mobile-menu-item">
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li className="mobile-menu-item">
+            <Link to={"/all-jewelry"}>View All Jewelry</Link>
+          </li>
+          <li className="mobile-menu-item">
+            <Link to={"/my-jewelry"}>My Jewelry</Link>
+          </li>
+          <li className="mobile-menu-item">
+            <Link to={"/new-jewelry"}>Add new Jewelry</Link>
+          </li>
+          <li className="mobile-menu-item">
+            <Link to={"/blog"}>Blog</Link>
+          </li>
+        </ul>
+
+        <div className="mobile-logs">
+          <Link to={"/login"}>Login</Link>
+          <Link to={"/signUp"}>SignUp</Link>
+          <Link to={"/logout"}>Logout</Link>
+        </div>
+      </div>
+
       <div className="profile-container">
         <div className="profile">
           <img src={profile} alt="profile pic" />
