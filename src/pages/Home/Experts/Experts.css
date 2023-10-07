@@ -1,0 +1,23 @@
+.experts-section {
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--primary-color));
+}
+
+.experts-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 1em;
+    flex-wrap: wrap;
+}
+
+.experts-cta {
+    background-color: rgb(var(--primary-color));
+    color: rgb(var(--secondary-color));
+}
+
+@media only screen and (max-width: 614px) {
+    .experts-cta {
+        margin-top: 1em;
+    }
+}

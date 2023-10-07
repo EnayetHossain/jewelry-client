@@ -14,7 +14,7 @@ const Banner = () => {
         <p className="hero-description">
           Exquisite sparkling that transcends generations
         </p>
-        <Link to={"/"} className="hero-cta">
+        <Link to={"/"} className="cta">
           Shop Now
         </Link>
       </div>
