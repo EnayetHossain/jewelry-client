@@ -1,0 +1,35 @@
+.ring-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 8em auto;
+}
+
+.ring-title {
+    font-size: clamp(2.5rem, 3vw, 3rem);
+}
+
+.ring-description {
+    font-size: 1.6rem;
+    word-wrap: break-word;
+    max-width: 50rem;
+}
+
+.ring-image {
+    width: 28rem;
+}
+
+@media only screen and (max-width: 700px) {
+    .ring-section {
+        flex-direction: column-reverse;
+    }
+
+    .ring-content {
+        margin: 4em 0 1em;
+        text-align: center;
+    }
+
+    .ring-image {
+        width: 20rem;
+    }
+}

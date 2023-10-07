@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import Experts from "../Experts/Experts";
+import Ring from "../Ring/Ring";
 import "./Home.css";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Experts></Experts>
+      <Ring></Ring>
     </div>
   );
 };
