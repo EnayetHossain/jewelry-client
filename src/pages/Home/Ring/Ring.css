@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 8em auto;
+    margin: 10em auto !important;
 }
 
 .ring-title {

@@ -5,10 +5,11 @@ footer {
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 2em !important;
+    padding: 3em 1em !important;
 }
 
 .contact p {
-    margin: 0.5em 0;
+    margin: 1em 0;
 }
 
 .footer-menu li {
@@ -22,6 +23,17 @@ footer {
 
 .footer-logs a {
     margin: 0.3em 0;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.icon {
+    margin-right: 0.7em;
+    font-size: 2rem;
 }
 
 @media only screen and (max-width: 660px) {

@@ -1,5 +1,5 @@
 .band-section {
-    margin: 10em auto;
+    margin: 12em auto !important;
 }
 
 .band-image {
@@ -8,12 +8,12 @@
 }
 
 .band-title {
-    font-size: 2.8rem;
+    font-size: 3rem !important;
 }
 
 .band-description {
     word-wrap: break-word;
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
     max-width: 50rem;
 }
 

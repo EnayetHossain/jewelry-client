@@ -1,3 +1,6 @@
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
@@ -22,9 +25,17 @@ const Footer = () => {
 
       <div className="contact">
         <h1>Contact Us</h1>
-        <p className="address">dummy, address, in anywhere, in the world</p>
-        <p className="address">012454353334</p>
-        <p className="address">example@gamil.com</p>
+        <p className="contact-info">
+          <FaLocationDot className="icon"></FaLocationDot>420 OKeefe Pine, Port
+          Zackeryberg, Arizona
+        </p>
+        <p className="contact-info">
+          <BsFillTelephoneFill className="icon"></BsFillTelephoneFill>
+          012454353334
+        </p>
+        <p className="contact-info">
+          <MdEmail className="icon"></MdEmail>example@gamil.com
+        </p>
       </div>
 
       <div className="footer-menu">

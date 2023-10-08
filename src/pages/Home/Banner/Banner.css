@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-around;
     color: rgb(var(--secondary-color));
-    margin: 6em auto;
+    margin: 8em auto;
 }
 
 .hero-title {
