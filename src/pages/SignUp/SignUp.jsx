@@ -10,7 +10,7 @@ const SignUp = () => {
   const location = useLocation();
   const from = location.state?.form?.pathname || "/";
   console.log(from);
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -41,6 +41,16 @@ const SignUp = () => {
       });
   };
 
+  const handleGoogleLogin = (event) => {
+    event.preventDefault();
+    googleSignIn()
+      .then(() => {
+        setError("");
+        navigate(from);
+      })
+      .catch((err) => setError(err.message));
+  };
+
   return (
     <div className="sign-up-container">
       <p className="error">{error}</p>
@@ -52,7 +62,7 @@ const SignUp = () => {
         <input type="password" placeholder="Password" name="password" />
         <input type="submit" value={"Sign up"} name="submit" />
       </form>
-      <button className="btn sign-btn">
+      <button className="btn sign-btn" onClick={handleGoogleLogin}>
         <BsGoogle className="btn-icon"></BsGoogle> Continue with Google
       </button>
       <p className="redirect">
