@@ -3,6 +3,7 @@ import heroImage from "../../../assets/hero.png";
 import "./Banner.css";
 
 const Banner = () => {
+  console.log(import.meta.env.VITE_apiKey);
   return (
     <section className="hero-section desktop-max">
       <div className="hero-content">
