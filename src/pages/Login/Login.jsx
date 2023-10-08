@@ -1,26 +1,23 @@
 import { BsGoogle } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import "./SignUp.css";
+import "./Login.css";
 
-const SignUp = () => {
+const Login = () => {
   return (
     <div className="sign-up-container">
       <form>
-        <input type="text" placeholder="Your Name" name="name" />
-        <input type="text" placeholder="Photo URL" name="photo" />
-        <input type="number" placeholder="Phone Number" name="phone" />
         <input type="email" placeholder="Your Email" name="email" />
         <input type="password" placeholder="Password" name="password" />
-        <input type="submit" value={"Sign in"} name="submit" />
+        <input type="submit" value={"Login"} name="submit" />
       </form>
       <button className="btn sign-btn">
         <BsGoogle className="btn-icon"></BsGoogle> Continue with Google
       </button>
       <p className="redirect">
-        Already have an account <Link to={"/login"}>Login</Link>
+        Don{"'"}t have an account <Link to={"/sign-up"}>SignUp</Link>
       </p>
     </div>
   );
 };
 
-export default SignUp;
+export default Login;
