@@ -1,0 +1,56 @@
+.sign-up-container,
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: min(45rem, 100%);
+}
+
+.sign-up-container {
+    padding: 0 0.5em;
+    margin: 5em auto 3em;
+}
+
+input {
+    width: 100%;
+    margin: 1em 0;
+    border: none;
+    outline: none;
+    padding: 1em;
+    font-size: 1.6rem;
+    box-shadow: 0rem 0rem 1rem rgba(var(--secondary-color), 0.2);
+    background-color: rgba(var(--secondary-color), 0.05);
+}
+
+input[type="submit"] {
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--primary-color));
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+input,
+.sign-btn {
+    border-radius: 0.3em;
+}
+
+.sign-btn {
+    width: 100%;
+    border: 2px solid rgba(var(--secondary-color), 0.6);
+    font-weight: 600;
+}
+
+.btn-icon {
+    margin-right: 0.5em;
+}
+
+.redirect {
+    margin-top: 1em;
+}
+
+.redirect a {
+    text-decoration: underline;
+    font-weight: 600;
+}

@@ -66,7 +66,7 @@ const Navbar = () => {
 
         <div className="mobile-logs">
           <Link to={"/login"}>Login</Link>
-          <Link to={"/signUp"}>SignUp</Link>
+          <Link to={"/sign-up"}>SignUp</Link>
           <Link to={"/logout"}>Logout</Link>
         </div>
       </div>
@@ -78,7 +78,7 @@ const Navbar = () => {
 
         <div className="logs">
           <Link to={"/login"}>Login</Link>
-          <Link to={"/signUp"}>SignUp</Link>
+          <Link to={"/sign-up"}>SignUp</Link>
           <Link to={"/logout"}>Logout</Link>
         </div>
 
