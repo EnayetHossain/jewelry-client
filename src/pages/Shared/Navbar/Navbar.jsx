@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 import profile from "../../../assets/profile.png";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  console.log(open);
+  const { user } = useContext(AuthContext);
 
   return (
     <nav className="navigation desktop-max">
@@ -34,12 +35,16 @@ const Navbar = () => {
         <li className="menu-item">
           <Link to={"/all-jewelry"}>View All Jewelry</Link>
         </li>
-        <li className="menu-item">
-          <Link to={"/my-jewelry"}>My Jewelry</Link>
-        </li>
-        <li className="menu-item">
-          <Link to={"/new-jewelry"}>Add new Jewelry</Link>
-        </li>
+        {user && (
+          <>
+            <li className="menu-item">
+              <Link to={"/my-jewelry"}>My Jewelry</Link>
+            </li>
+            <li className="menu-item">
+              <Link to={"/new-jewelry"}>Add new Jewelry</Link>
+            </li>
+          </>
+        )}
         <li className="menu-item">
           <Link to={"/blog"}>Blog</Link>
         </li>
@@ -64,22 +69,42 @@ const Navbar = () => {
           </li>
         </ul>
 
+        {user && (
+          <div className="profile">
+            <img src={profile} alt="profile pic" />
+          </div>
+        )}
+
         <div className="mobile-logs">
+          {user ? (
+            <button className="btn logout-btn">Logout</button>
+          ) : (
+            <>
+              <Link to={"/login"}>Login</Link>
+              <Link to={"/sign-up"}>SignUp</Link>
+            </>
+          )}
           <Link to={"/login"}>Login</Link>
           <Link to={"/sign-up"}>SignUp</Link>
-          <Link to={"/logout"}>Logout</Link>
         </div>
       </div>
 
       <div className="profile-container">
-        <div className="profile">
-          <img src={profile} alt="profile pic" />
-        </div>
+        {user && (
+          <div className="profile">
+            <img src={profile} alt="profile pic" />
+          </div>
+        )}
 
         <div className="logs">
-          <Link to={"/login"}>Login</Link>
-          <Link to={"/sign-up"}>SignUp</Link>
-          <Link to={"/logout"}>Logout</Link>
+          {user ? (
+            <button className="btn logout-btn">Logout</button>
+          ) : (
+            <>
+              <Link to={"/login"}>Login</Link>
+              <Link to={"/sign-up"}>SignUp</Link>
+            </>
+          )}
         </div>
 
         <div className="ham-bar" onClick={() => setOpen(!open)}>

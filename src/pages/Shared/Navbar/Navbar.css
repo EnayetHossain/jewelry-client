@@ -78,6 +78,19 @@
     margin: 5em 0;
 }
 
+.logs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-btn {
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--primary-color));
+    font-size: 1.6rem;
+    padding: 0.5em 1em;
+}
+
 @media only screen and (max-width: 1079px) {
 
     .main-menu,

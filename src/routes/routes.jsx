@@ -4,6 +4,7 @@ import AllJewelry from "../pages/AllJewelry/AllJewelry";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ export const router = createBrowserRouter([
 
       {
         path: "/all-jewelry",
-        element: <AllJewelry></AllJewelry>,
+        element: (
+          <PrivateRoute>
+            <AllJewelry></AllJewelry>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/jewelry"),
       },
 
