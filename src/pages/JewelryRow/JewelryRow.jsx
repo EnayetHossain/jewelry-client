@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./JewelryRow.css";
 
 const JewelryRow = ({ jewel }) => {
-  const { _id, title, picture } = jewel;
+  const { _id, title, picture, price } = jewel;
 
   return (
     <div className="jewelry-row">
@@ -13,6 +13,10 @@ const JewelryRow = ({ jewel }) => {
 
       <div className="jewelry-title">
         <p>{title}</p>
+      </div>
+
+      <div className="jewelry-price">
+        <p>{price}</p>
       </div>
 
       <div className="jewelry-buttons">

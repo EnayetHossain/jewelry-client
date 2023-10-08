@@ -18,6 +18,10 @@ const AllJewelry = () => {
         </div>
 
         <div className="jewelry-heading">
+          <p>Price</p>
+        </div>
+
+        <div className="jewelry-heading">
           <p>Options</p>
         </div>
       </div>

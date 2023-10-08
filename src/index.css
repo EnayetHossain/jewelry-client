@@ -49,6 +49,7 @@ ul {
   background-color: rgb(var(--secondary-color));
   color: rgb(var(--primary-color));
   padding: 0.5em 1.5em;
+  display: inline-block;
 }
 
 .desktop-max {
