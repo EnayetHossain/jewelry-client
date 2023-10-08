@@ -9,6 +9,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.form?.pathname || "/";
+  console.log(from);
   const { createUser, updateUser } = useContext(AuthContext);
 
   const handleSignUp = (event) => {

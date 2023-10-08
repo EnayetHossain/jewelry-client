@@ -3,12 +3,18 @@ import { FaBars } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import profile from "../../../assets/profile.png";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, logOutUser } = useContext(AuthContext);
+
+  const handleLogOut = (event) => {
+    event.preventDefault();
+    logOutUser()
+      .then()
+      .catch((err) => console.log(err));
+  };
 
   return (
     <nav className="navigation desktop-max">
@@ -71,13 +77,19 @@ const Navbar = () => {
 
         {user && (
           <div className="profile">
-            <img src={profile} alt="profile pic" />
+            <img
+              src={user.photoURL}
+              title={user.displayName}
+              alt={user.displayName}
+            />
           </div>
         )}
 
         <div className="mobile-logs">
           {user ? (
-            <button className="btn logout-btn">Logout</button>
+            <button onClick={handleLogOut} className="btn logout-btn">
+              Logout
+            </button>
           ) : (
             <>
               <Link to={"/login"}>Login</Link>
@@ -92,13 +104,19 @@ const Navbar = () => {
       <div className="profile-container">
         {user && (
           <div className="profile">
-            <img src={profile} alt="profile pic" />
+            <img
+              src={user.photoURL}
+              title={user.displayName}
+              alt={user.displayName}
+            />
           </div>
         )}
 
         <div className="logs">
           {user ? (
-            <button className="btn logout-btn">Logout</button>
+            <button onClick={handleLogOut} className="btn logout-btn">
+              Logout
+            </button>
           ) : (
             <>
               <Link to={"/login"}>Login</Link>

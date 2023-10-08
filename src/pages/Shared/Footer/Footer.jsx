@@ -7,7 +7,14 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import "./Footer.css";
 
 const Footer = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOutUser } = useContext(AuthContext);
+
+  const handleLogOut = (event) => {
+    event.preventDefault();
+    logOutUser()
+      .then()
+      .catch((err) => console.log(err));
+  };
 
   return (
     <footer className="desktop-max">
@@ -68,7 +75,9 @@ const Footer = () => {
 
         <div className="footer-logs">
           {user ? (
-            <button className="btn logout-btn">Login</button>
+            <button onClick={handleLogOut} className="btn logout-btn">
+              Login
+            </button>
           ) : (
             <>
               <Link to={"/signUp"}>SignUp</Link>
