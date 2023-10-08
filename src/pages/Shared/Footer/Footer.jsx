@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 import "./Footer.css";
 
 const Footer = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <footer className="desktop-max">
       <div className="logo">
@@ -47,21 +51,30 @@ const Footer = () => {
           <li className="footer-menu-item">
             <Link to={"/all-jewelry"}>View All Jewelry</Link>
           </li>
-          <li className="footer-menu-item">
-            <Link to={"/my-jewelry"}>My Jewelry</Link>
-          </li>
-          <li className="footer-menu-item">
-            <Link to={"/new-jewelry"}>Add new Jewelry</Link>
-          </li>
+          {user && (
+            <>
+              <li className="footer-menu-item">
+                <Link to={"/my-jewelry"}>My Jewelry</Link>
+              </li>
+              <li className="footer-menu-item">
+                <Link to={"/new-jewelry"}>Add new Jewelry</Link>
+              </li>
+            </>
+          )}
           <li className="footer-menu-item">
             <Link to={"/blog"}>Blog</Link>
           </li>
         </ul>
 
         <div className="footer-logs">
-          <Link to={"/login"}>Login</Link>
-          <Link to={"/signUp"}>SignUp</Link>
-          <Link to={"/logout"}>Logout</Link>
+          {user ? (
+            <button className="btn logout-btn">Login</button>
+          ) : (
+            <>
+              <Link to={"/signUp"}>SignUp</Link>
+              <Link to={"/logout"}>Logout</Link>
+            </>
+          )}
         </div>
       </div>
     </footer>
