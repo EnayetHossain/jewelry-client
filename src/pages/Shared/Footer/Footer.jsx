@@ -64,7 +64,7 @@ const Footer = () => {
                 <Link to={"/my-jewelry"}>My Jewelry</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to={"/new-jewelry"}>Add new Jewelry</Link>
+                <Link to={"/add-jewelry"}>Add new Jewelry</Link>
               </li>
             </>
           )}

@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
+import AddJewelry from "../pages/AddJewelry/AddJewelry";
 import AllJewelry from "../pages/AllJewelry/AllJewelry";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
@@ -18,22 +19,27 @@ export const router = createBrowserRouter([
 
       {
         path: "/all-jewelry",
-        element: (
-          <PrivateRoute>
-            <AllJewelry></AllJewelry>
-          </PrivateRoute>
-        ),
+        element: <AllJewelry></AllJewelry>,
         loader: () => fetch("http://localhost:5000/jewelry"),
       },
 
       {
-        path: "sign-up",
+        path: "/sign-up",
         element: <SignUp></SignUp>,
       },
 
       {
-        path: "login",
+        path: "/login",
         element: <Login></Login>,
+      },
+
+      {
+        path: "/add-jewelry",
+        element: (
+          <PrivateRoute>
+            <AddJewelry></AddJewelry>
+          </PrivateRoute>
+        ),
       },
     ],
   },

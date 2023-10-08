@@ -47,7 +47,7 @@ const Navbar = () => {
               <Link to={"/my-jewelry"}>My Jewelry</Link>
             </li>
             <li className="menu-item">
-              <Link to={"/new-jewelry"}>Add new Jewelry</Link>
+              <Link to={"/add-jewelry"}>Add new Jewelry</Link>
             </li>
           </>
         )}
@@ -68,7 +68,7 @@ const Navbar = () => {
             <Link to={"/my-jewelry"}>My Jewelry</Link>
           </li>
           <li className="mobile-menu-item">
-            <Link to={"/new-jewelry"}>Add new Jewelry</Link>
+            <Link to={"/add-jewelry"}>Add new Jewelry</Link>
           </li>
           <li className="mobile-menu-item">
             <Link to={"/blog"}>Blog</Link>

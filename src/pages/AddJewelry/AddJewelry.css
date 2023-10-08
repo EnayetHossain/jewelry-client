@@ -1,0 +1,11 @@
+textarea {
+    width: 100%;
+    margin: 1em 0;
+    border: none;
+    outline: none;
+    padding: 1em;
+    font-size: 1.6rem;
+    box-shadow: 0rem 0rem 1rem rgba(var(--secondary-color), 0.2);
+    background-color: rgba(var(--secondary-color), 0.05);
+    font-family: 'Open Sans', sans-serif;
+}
