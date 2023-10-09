@@ -1,0 +1,27 @@
+.not-found {
+    color: rgb(var(--secondary-color));
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.not-found>p {
+    margin: 1em 0;
+}
+
+.not-found-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--primary-color));
+    font-weight: 600;
+    padding: 0.3em 1em;
+    border-radius: 0.3em;
+}
+
+.not-found-link>span {
+    margin-top: 0.25em;
+}

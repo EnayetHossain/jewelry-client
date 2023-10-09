@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layouts/Dashboard";
 import Main from "../Layouts/Main";
+import NotFound from "../Notfound/NotFound";
 import AddJewelry from "../pages/AddJewelry/AddJewelry";
 import AllJewelry from "../pages/AllJewelry/AllJewelry";
 import MainContent from "../pages/Dashboard/MainContent/MainContent";
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",
@@ -86,6 +88,7 @@ export const router = createBrowserRouter([
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/dashboard",
