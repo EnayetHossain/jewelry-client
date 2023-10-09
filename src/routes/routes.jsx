@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import MyJewelry from "../pages/MyJewelry/MyJewelry";
 import SignUp from "../pages/SignUp/SignUp";
 import SingleJewelry from "../pages/SingleJewelry/SingleJewelry";
+import UpdateJewelry from "../pages/UpdateJewelry/UpdateJewelry";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -60,6 +61,13 @@ export const router = createBrowserRouter([
             <SingleJewelry></SingleJewelry>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/jewelry/${params.id}`),
+      },
+
+      {
+        path: "/update-jewelry/:id",
+        element: <UpdateJewelry></UpdateJewelry>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/jewelry/${params.id}`),
       },

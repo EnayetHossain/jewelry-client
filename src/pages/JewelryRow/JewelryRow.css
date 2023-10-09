@@ -24,6 +24,23 @@
     max-width: 20rem;
 }
 
+.jewelry-buttons {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.jewelry-buttons a,
+.jewelry-buttons button {
+    margin: 0 0.5em;
+}
+
+.delete-btn {
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--primary-color));
+    padding: 0.5em 1.5em;
+}
+
 @media only screen and (max-width: 728px) {
     .jewelry-row {
         flex-direction: column;

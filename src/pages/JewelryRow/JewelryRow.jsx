@@ -1,9 +1,15 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { BsFillTrashFill } from "react-icons/bs";
+import { MdTipsAndUpdates } from "react-icons/md";
+import { TbListDetails } from "react-icons/tb";
+import { Link, useLocation } from "react-router-dom";
 import "./JewelryRow.css";
 
 const JewelryRow = ({ jewel }) => {
   const { _id, title, picture, price } = jewel;
+  const location = useLocation();
+  const form = location.pathname === "/my-jewelry" ? true : false;
+  console.log(form);
 
   return (
     <div className="jewelry-row">
@@ -20,9 +26,20 @@ const JewelryRow = ({ jewel }) => {
       </div>
 
       <div className="jewelry-buttons">
-        <Link className="cta" to={`/jewelry/${_id}`}>
-          View details
+        <Link className="cta" title="View details" to={`/jewelry/${_id}`}>
+          <TbListDetails></TbListDetails>
         </Link>
+
+        {form && (
+          <>
+            <Link className="cta" title="Update" to={`/update-jewelry/${_id}`}>
+              <MdTipsAndUpdates></MdTipsAndUpdates>
+            </Link>
+            <button className="btn delete-btn" title="Delete">
+              <BsFillTrashFill></BsFillTrashFill>
+            </button>
+          </>
+        )}
       </div>
     </div>
   );
