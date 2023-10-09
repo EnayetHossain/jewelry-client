@@ -4,6 +4,7 @@ import AddJewelry from "../pages/AddJewelry/AddJewelry";
 import AllJewelry from "../pages/AllJewelry/AllJewelry";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
+import MyJewelry from "../pages/MyJewelry/MyJewelry";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 
@@ -38,6 +39,15 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddJewelry></AddJewelry>
+          </PrivateRoute>
+        ),
+      },
+
+      {
+        path: "/my-jewelry",
+        element: (
+          <PrivateRoute>
+            <MyJewelry></MyJewelry>
           </PrivateRoute>
         ),
       },
