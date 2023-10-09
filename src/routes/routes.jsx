@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
       {
         path: "/all-jewelry",
         element: <AllJewelry></AllJewelry>,
-        loader: () => fetch("http://localhost:5000/jewelry"),
+        loader: () => fetch("https://jewellery-server.vercel.app/jewelry"),
       },
 
       {
@@ -66,14 +66,14 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/jewelry/${params.id}`),
+          fetch(`https://jewellery-server.vercel.app/jewelry/${params.id}`),
       },
 
       {
         path: "/update-jewelry/:id",
         element: <UpdateJewelry></UpdateJewelry>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/jewelry/${params.id}`),
+          fetch(`https://jewellery-server.vercel.app/jewelry/${params.id}`),
       },
     ],
   },
@@ -90,7 +90,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <MainContent></MainContent>,
-        loader: () => fetch("http://localhost:5000/users"),
+        loader: () => fetch("https://jewellery-server.vercel.app/users"),
       },
 
       {
@@ -101,7 +101,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/users/${params.id}`),
+          fetch(`https://jewellery-server.vercel.app/users/${params.id}`),
       },
 
       {

@@ -26,7 +26,7 @@ const SignUp = () => {
         updateUser(name, photo, phone)
           .then(() => {
             const savedUser = { name, photo, phone, email, role: "client" };
-            fetch("http://localhost:5000/users", {
+            fetch("https://jewellery-server.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -65,7 +65,7 @@ const SignUp = () => {
           role: "client",
         };
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://jewellery-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

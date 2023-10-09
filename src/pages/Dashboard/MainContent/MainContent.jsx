@@ -20,7 +20,7 @@ const MainContent = () => {
   console.log(user.email);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/carts?email=${user.email}`)
+    fetch(`https://jewellery-server.vercel.app/carts?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setCarts(data);
@@ -29,7 +29,7 @@ const MainContent = () => {
   }, [user]);
 
   // useEffect(() => {
-  //   fetch("http://localhost:5000/users")
+  //   fetch("https://jewellery-server.vercel.app/users")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setUsers(data);

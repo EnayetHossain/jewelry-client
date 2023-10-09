@@ -9,7 +9,7 @@ const MyJewelry = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my-jewelry?email=${user.email}`)
+    fetch(`https://jewellery-server.vercel.app/my-jewelry?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setJewelry(data));
   }, [user]);
@@ -19,7 +19,7 @@ const MyJewelry = () => {
     const proceed = confirm("Are you sure?");
     if (proceed) {
       console.log(id);
-      fetch(`http://localhost:5000/jewelry/${id}`, {
+      fetch(`https://jewellery-server.vercel.app/jewelry/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

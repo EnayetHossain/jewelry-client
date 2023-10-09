@@ -6,7 +6,7 @@ const useRole = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/users/role", {
+    fetch("https://jewellery-server.vercel.app/users/role", {
       method: "POST",
       headers: {
         "content-type": "application/json",

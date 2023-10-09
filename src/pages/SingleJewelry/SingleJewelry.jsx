@@ -19,7 +19,7 @@ const SingleJewelry = () => {
       email: user.email, // user email
     };
 
-    fetch("http://localhost:5000/cart", {
+    fetch("https://jewellery-server.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json",

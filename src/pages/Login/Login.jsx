@@ -42,7 +42,7 @@ const Login = () => {
           role: "client",
         };
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://jewellery-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

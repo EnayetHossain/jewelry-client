@@ -24,7 +24,7 @@ const AddJewelry = () => {
       description,
     };
 
-    fetch("http://localhost:5000/jewelry", {
+    fetch("https://jewellery-server.vercel.app/jewelry", {
       method: "POST",
       headers: {
         "content-type": "application/json",

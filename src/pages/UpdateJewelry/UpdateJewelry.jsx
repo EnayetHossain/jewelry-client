@@ -26,7 +26,7 @@ const UpdateJewelry = () => {
       description,
     };
 
-    fetch(`http://localhost:5000/jewelry/${_id}`, {
+    fetch(`https://jewellery-server.vercel.app/jewelry/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

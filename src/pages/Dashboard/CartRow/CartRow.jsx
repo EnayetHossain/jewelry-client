@@ -10,7 +10,7 @@ const CartRow = ({ cart }) => {
     const proceed = confirm("Are you sure?");
     if (proceed) {
       console.log(id);
-      fetch(`http://localhost:5000/carts/${id}`, {
+      fetch(`https://jewellery-server.vercel.app/carts/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
