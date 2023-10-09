@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Dashboard from "../Layouts/Dashboard";
 import Main from "../Layouts/Main";
 import AddJewelry from "../pages/AddJewelry/AddJewelry";
 import AllJewelry from "../pages/AllJewelry/AllJewelry";
@@ -72,5 +73,10 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/jewelry/${params.id}`),
       },
     ],
+  },
+
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
   },
 ]);

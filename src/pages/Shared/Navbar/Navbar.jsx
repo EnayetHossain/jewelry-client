@@ -96,8 +96,7 @@ const Navbar = () => {
               <Link to={"/sign-up"}>SignUp</Link>
             </>
           )}
-          <Link to={"/login"}>Login</Link>
-          <Link to={"/sign-up"}>SignUp</Link>
+          {user && <Link to={"/dashboard"}>Dashboard</Link>}
         </div>
       </div>
 
@@ -123,6 +122,8 @@ const Navbar = () => {
               <Link to={"/sign-up"}>SignUp</Link>
             </>
           )}
+
+          {user && <Link to={"/dashboard"}>Dashboard</Link>}
         </div>
 
         <div className="ham-bar" onClick={() => setOpen(!open)}>
