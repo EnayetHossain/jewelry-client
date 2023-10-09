@@ -54,3 +54,15 @@ input,
     text-decoration: underline;
     font-weight: 600;
 }
+
+.toggle {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle p {
+    margin-left: 0.5em;
+}

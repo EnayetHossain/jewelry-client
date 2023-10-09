@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import { BsGoogle } from "react-icons/bs";
+import { BsEyeFill, BsEyeSlashFill, BsGoogle } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import "./Login.css";
 
 const Login = () => {
+  const [show, setShow] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,11 +22,10 @@ const Login = () => {
       .then(() => {
         setError("");
         form.reset();
-        navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         setError(err.message);
-        navigate(from);
       });
   };
 
@@ -34,7 +34,7 @@ const Login = () => {
     googleSignIn()
       .then(() => {
         setError("");
-        navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((err) => setError(err.message));
   };
@@ -43,7 +43,17 @@ const Login = () => {
       <p className="error">{error}</p>
       <form onSubmit={handleLogin}>
         <input type="email" placeholder="Your Email" name="email" />
-        <input type="password" placeholder="Password" name="password" />
+        <input
+          type={show ? "text" : "password"}
+          placeholder="Password"
+          name="password"
+        />
+
+        <div className="toggle" onClick={() => setShow(!show)}>
+          {show ? <BsEyeSlashFill></BsEyeSlashFill> : <BsEyeFill></BsEyeFill>}
+          <p>{show ? "hide" : "show"} password</p>
+        </div>
+
         <input type="submit" value={"Login"} name="submit" />
       </form>
       <button className="btn sign-btn" onClick={handleGoogleLogin}>
