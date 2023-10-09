@@ -1,4 +1,6 @@
 import { useContext, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../Provider/AuthProvider";
 import "./AddJewelry.css";
 
@@ -29,24 +31,22 @@ const AddJewelry = () => {
       },
       body: JSON.stringify(jewelryData),
     })
-      .then((res) => {
-        res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setError("");
-      })
-      .catch((err) => {
-        setError(err.message);
-        console.log(err);
-      });
 
-    console.log(jewelryData);
+        if (data.insertedId) {
+          setError("");
+          toast.success("Jewelry added for sell");
+          form.reset();
+        }
+      });
   };
 
   return (
     <div className="sign-up-container">
-      <p className="error"></p>
+      <ToastContainer />
+      <p className="error">{error}</p>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Jewelry photo URL" name="photo" />
         <input type="text" placeholder="Title" name="title" />
