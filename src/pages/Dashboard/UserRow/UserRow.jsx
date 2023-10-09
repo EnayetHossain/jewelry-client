@@ -1,4 +1,3 @@
-import { RiAdminFill } from "react-icons/ri";
 import { TbListDetails } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import "./UserRow.css";
@@ -21,7 +20,7 @@ const UserRow = ({ user }) => {
         <p>{role}</p>
       </div>
 
-      <div className="jewelry-buttons user-buttons">
+      <div className="jewelry-buttons">
         <Link
           className="cta user-cta"
           title="View details"
@@ -29,10 +28,6 @@ const UserRow = ({ user }) => {
         >
           <TbListDetails></TbListDetails>
         </Link>
-
-        <button className="btn user-btn" title="Make owner">
-          <RiAdminFill></RiAdminFill>
-        </button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 .dashboard-section {
     background-color: rgba(var(--secondary-color), 0.97);
-    height: 100vh;
+    min-height: 100dvh;
 }
 
 .dashboard-container {

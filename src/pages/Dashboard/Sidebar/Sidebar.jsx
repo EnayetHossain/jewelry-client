@@ -35,6 +35,12 @@ const Sidebar = () => {
               All users
             </Link>
           </li>
+
+          <li className="dashboard-menu-item">
+            <Link className="analytics" to={"/"}>
+              Home
+            </Link>
+          </li>
         </ul>
       </div>
 
@@ -65,8 +71,14 @@ const Sidebar = () => {
             }`}
           >
             <li className="dashboard-menu-item item-active">
+              <Link className="analytics" to="/dashboard">
+                All users
+              </Link>
+            </li>
+
+            <li className="dashboard-menu-item item-active">
               <Link className="analytics" to="/">
-                Analytics
+                Home
               </Link>
             </li>
           </ul>

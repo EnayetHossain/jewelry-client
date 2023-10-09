@@ -4,6 +4,7 @@ import Main from "../Layouts/Main";
 import AddJewelry from "../pages/AddJewelry/AddJewelry";
 import AllJewelry from "../pages/AllJewelry/AllJewelry";
 import MainContent from "../pages/Dashboard/MainContent/MainContent";
+import UserDetails from "../pages/Dashboard/UserDetails/UserDetails";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import MyJewelry from "../pages/MyJewelry/MyJewelry";
@@ -89,6 +90,17 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <MainContent></MainContent>,
         loader: () => fetch("http://localhost:5000/users"),
+      },
+
+      {
+        path: "/dashboard/:id",
+        element: (
+          <PrivateRoute>
+            <UserDetails></UserDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/users/${params.id}`),
       },
     ],
   },

@@ -1,0 +1,7 @@
+.user-section {
+    color: rgb(var(--primary-color));
+}
+
+.user-image {
+    width: 20em !important;
+}
