@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import MyJewelry from "../pages/MyJewelry/MyJewelry";
 import SignUp from "../pages/SignUp/SignUp";
+import SingleJewelry from "../pages/SingleJewelry/SingleJewelry";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -50,6 +51,17 @@ export const router = createBrowserRouter([
             <MyJewelry></MyJewelry>
           </PrivateRoute>
         ),
+      },
+
+      {
+        path: "/jewelry/:id",
+        element: (
+          <PrivateRoute>
+            <SingleJewelry></SingleJewelry>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/jewelry/${params.id}`),
       },
     ],
   },

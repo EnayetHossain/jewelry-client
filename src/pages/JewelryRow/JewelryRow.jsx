@@ -20,7 +20,7 @@ const JewelryRow = ({ jewel }) => {
       </div>
 
       <div className="jewelry-buttons">
-        <Link className="cta" to={`/jewelry/:${_id}`}>
+        <Link className="cta" to={`/jewelry/${_id}`}>
           View details
         </Link>
       </div>

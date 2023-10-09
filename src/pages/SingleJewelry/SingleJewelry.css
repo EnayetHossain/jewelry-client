@@ -1,0 +1,24 @@
+.single-jewelry-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 8em auto;
+}
+
+.details-image {
+    width: 40em;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.price {
+    margin: 1.3em 0;
+}
+
+.price p:first-child {
+    font-size: 2rem;
+    font-weight: 700;
+}
