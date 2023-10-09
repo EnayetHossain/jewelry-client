@@ -5,11 +5,10 @@ import { TbListDetails } from "react-icons/tb";
 import { Link, useLocation } from "react-router-dom";
 import "./JewelryRow.css";
 
-const JewelryRow = ({ jewel }) => {
+const JewelryRow = ({ jewel, handleDelete }) => {
   const { _id, title, picture, price } = jewel;
   const location = useLocation();
   const form = location.pathname === "/my-jewelry" ? true : false;
-  console.log(form);
 
   return (
     <div className="jewelry-row">
@@ -35,7 +34,11 @@ const JewelryRow = ({ jewel }) => {
             <Link className="cta" title="Update" to={`/update-jewelry/${_id}`}>
               <MdTipsAndUpdates></MdTipsAndUpdates>
             </Link>
-            <button className="btn delete-btn" title="Delete">
+            <button
+              className="btn delete-btn"
+              title="Delete"
+              onClick={() => handleDelete(_id)}
+            >
               <BsFillTrashFill></BsFillTrashFill>
             </button>
           </>
