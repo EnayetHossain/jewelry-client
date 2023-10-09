@@ -4,6 +4,7 @@ import Main from "../Layouts/Main";
 import AddJewelry from "../pages/AddJewelry/AddJewelry";
 import AllJewelry from "../pages/AllJewelry/AllJewelry";
 import MainContent from "../pages/Dashboard/MainContent/MainContent";
+import SingleCart from "../pages/Dashboard/SingleCart/SingleCart";
 import UserDetails from "../pages/Dashboard/UserDetails/UserDetails";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
@@ -101,6 +102,15 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/users/${params.id}`),
+      },
+
+      {
+        path: "dashboard/cart/:id",
+        element: (
+          <PrivateRoute>
+            <SingleCart></SingleCart>
+          </PrivateRoute>
+        ),
       },
     ],
   },

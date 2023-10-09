@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineRight } from "react-icons/ai";
 import { MdDashboard } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ role }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -30,11 +31,19 @@ const Sidebar = () => {
             collapsed ? "" : "dashboard-menu-items-active"
           }`}
         >
-          <li className="dashboard-menu-item">
-            <Link className="analytics" to={"/dashboard"}>
-              All users
-            </Link>
-          </li>
+          {role === "owner" ? (
+            <li className="dashboard-menu-item">
+              <Link className="analytics" to={"/dashboard"}>
+                All users
+              </Link>
+            </li>
+          ) : (
+            <li className="dashboard-menu-item">
+              <Link className="analytics" to={"/dashboard"}>
+                All carts
+              </Link>
+            </li>
+          )}
 
           <li className="dashboard-menu-item">
             <Link className="analytics" to={"/"}>
