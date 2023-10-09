@@ -1,6 +1,28 @@
 .dashboard-section {
-    background-color: rebeccapurple;
-    display: grid;
-    grid-template-columns: 20rem 1fr;
-    gap: 1em;
+    background-color: rgba(var(--secondary-color), 0.97);
+    height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.side {
+    flex-grow: 1;
+}
+
+.top-outlet-container {
+    width: calc(100% - 16em);
+}
+
+@media only screen and (max-width: 1180px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .top-outlet-container {
+        width: 100%;
+    }
 }

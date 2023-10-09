@@ -3,6 +3,7 @@ import Dashboard from "../Layouts/Dashboard";
 import Main from "../Layouts/Main";
 import AddJewelry from "../pages/AddJewelry/AddJewelry";
 import AllJewelry from "../pages/AllJewelry/AllJewelry";
+import MainContent from "../pages/Dashboard/MainContent/MainContent";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import MyJewelry from "../pages/MyJewelry/MyJewelry";
@@ -75,6 +76,7 @@ export const router = createBrowserRouter([
     ],
   },
 
+  // dash board layout
   {
     path: "/dashboard",
     element: (
@@ -82,5 +84,11 @@ export const router = createBrowserRouter([
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
+    children: [
+      {
+        path: "/dashboard",
+        element: <MainContent></MainContent>,
+      },
+    ],
   },
 ]);

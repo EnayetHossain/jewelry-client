@@ -1,0 +1,84 @@
+.top-bar {
+    background-color: rgb(var(--secondary-color));
+    margin: 1em 1.5em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(var(--primary-color), 0.7);
+    padding: 1em 1.3em;
+    border-radius: 0.5em;
+    display: none;
+}
+
+.search-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    margin: 0 0.5em;
+    color: rgba(var(--primary-color), 0.4);
+    cursor: pointer;
+}
+
+.key-binding {
+    color: rgba(var(--primary-color), 0.4);
+    border: 1px solid rgba(var(--primary-color), 0.4);
+    padding-top: 0.1em;
+    padding-bottom: 0.2em;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+    font-size: 1.2rem;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+
+.ham-bar-container {
+    display: none;
+}
+
+.search-icon,
+.ham-bar-icon {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.search-icon-container {
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.theme-switch {
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.theme-switch>svg {
+    font-size: 1.5em;
+}
+
+.ham-bar-icon {
+    margin-right: 0.2em;
+}
+
+@media only screen and (max-width: 1180px) {
+    .ham-bar-container {
+        display: block;
+    }
+
+    .top-bar {
+        display: flex;
+    }
+}
