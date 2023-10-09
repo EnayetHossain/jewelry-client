@@ -88,6 +88,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <MainContent></MainContent>,
+        loader: () => fetch("http://localhost:5000/users"),
       },
     ],
   },

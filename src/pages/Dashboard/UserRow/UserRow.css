@@ -1,0 +1,29 @@
+.user-row {
+    border-top: 1px solid rgba(var(--primary-color), 0.7);
+}
+
+.user-row:last-child {
+    border-bottom: 1px solid rgba(var(--primary-color), 0.7);
+}
+
+.user-row:hover {
+    color: rgba(var(--primary-color), 0.7);
+}
+
+.user-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-cta {
+    background-color: rgb(var(--primary-color));
+    color: rgb(var(--secondary-color));
+    font-size: 2rem;
+    padding: 0.2em 0.5em;
+}
+
+.user-btn {
+    font-size: 2rem;
+    padding: 0.4em 0.5em;
+}

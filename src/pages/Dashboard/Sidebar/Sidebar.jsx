@@ -31,8 +31,8 @@ const Sidebar = () => {
           }`}
         >
           <li className="dashboard-menu-item">
-            <Link className="analytics" to={"/"}>
-              Analytics
+            <Link className="analytics" to={"/dashboard"}>
+              All users
             </Link>
           </li>
         </ul>
