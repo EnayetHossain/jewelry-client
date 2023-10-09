@@ -32,9 +32,31 @@ const Login = () => {
   const handleGoogleLogin = (event) => {
     event.preventDefault();
     googleSignIn()
-      .then(() => {
-        setError("");
-        navigate(from, { replace: true });
+      .then((result) => {
+        const loggedUser = result.user;
+        const savedUser = {
+          name: loggedUser.displayName,
+          photo: loggedUser.photoURL,
+          phone: loggedUser.phoneNumber,
+          email: loggedUser.email,
+          role: "client",
+        };
+
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(savedUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              setError("");
+              navigate(from, { replace: true });
+            }
+          })
+          .catch((err) => console.log(err));
       })
       .catch((err) => setError(err.message));
   };
