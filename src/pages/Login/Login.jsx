@@ -9,7 +9,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  console.log(from);
   const { signInUser, googleSignIn } = useContext(AuthContext);
 
   const handleLogin = (event) => {
@@ -19,14 +18,12 @@ const Login = () => {
     const password = form.password.value;
 
     signInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         setError("");
         form.reset();
         navigate(from);
       })
       .catch((err) => {
-        console.log(err);
         setError(err.message);
         navigate(from);
       });

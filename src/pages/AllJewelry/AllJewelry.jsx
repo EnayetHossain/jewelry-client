@@ -4,7 +4,6 @@ import "./AllJewelry.css";
 
 const AllJewelry = () => {
   const jewelry = useLoaderData();
-  console.log(jewelry);
 
   return (
     <section className="jewelry-section desktop-max">

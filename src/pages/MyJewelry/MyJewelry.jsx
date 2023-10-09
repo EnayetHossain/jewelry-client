@@ -13,8 +13,6 @@ const MyJewelry = () => {
       .then((data) => setJewelry(data));
   }, [user]);
 
-  console.log(jewelry);
-
   return (
     <section className="my-jewelry-section desktop-max">
       {jewelry.map((jewel) => (

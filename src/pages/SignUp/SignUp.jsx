@@ -9,7 +9,6 @@ const SignUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.form?.pathname || "/";
-  console.log(from);
   const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
@@ -22,8 +21,7 @@ const SignUp = () => {
     const password = form.password.value;
 
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         updateUser(name, photo, phone)
           .then(() => {
             setError("");
@@ -32,12 +30,10 @@ const SignUp = () => {
           })
           .catch((err) => {
             setError(err.message);
-            console.log(err);
           });
       })
       .catch((err) => {
         setError(err.message);
-        console.log(err);
       });
   };
 

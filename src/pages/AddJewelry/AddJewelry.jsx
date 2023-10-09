@@ -33,8 +33,6 @@ const AddJewelry = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
         if (data.insertedId) {
           setError("");
           toast.success("Jewelry added for sell");

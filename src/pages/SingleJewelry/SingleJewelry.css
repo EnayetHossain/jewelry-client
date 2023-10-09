@@ -12,6 +12,13 @@
 .title {
     font-size: 2.2rem;
     font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.description,
+.title {
+    word-wrap: break-word;
+    max-width: 50rem;
 }
 
 .price {
@@ -21,4 +28,10 @@
 .price p:first-child {
     font-size: 2rem;
     font-weight: 700;
+}
+
+.cart-btn {
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--primary-color));
+    padding: 0.5em 1em;
 }
